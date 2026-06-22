@@ -17,34 +17,36 @@ export const queueEvents = new QueueEvents('mediaQueue', { connection: redisConn
 queueEvents.on('completed', async ({ jobId }) => {
   logger.info(`Global event: Job ${jobId} completed`);
   if (io) {
-    io.emit('jobUpdated', queueService.getJob(jobId));
+    const job = queueService.getJob(jobId);
+    if (job?.sessionId) io.to(job.sessionId).emit('jobUpdated', job);
   }
 });
 
 queueEvents.on('failed', async ({ jobId }) => {
   logger.info(`Global event: Job ${jobId} failed`);
   if (io) {
-    io.emit('jobUpdated', queueService.getJob(jobId));
+    const job = queueService.getJob(jobId);
+    if (job?.sessionId) io.to(job.sessionId).emit('jobUpdated', job);
   }
 });
 
 queueEvents.on('progress', async ({ jobId, data }) => {
-  // data contains the progress number
   if (io) {
-    io.emit('jobUpdated', queueService.getJob(jobId));
+    const job = queueService.getJob(jobId);
+    if (job?.sessionId) io.to(job.sessionId).emit('jobUpdated', job);
   }
 });
 
 class QueueService {
-  public async enqueue(url: string): Promise<string> {
+  public async enqueue(url: string, sessionId: string): Promise<string> {
     const jobId = uuidv4();
     
     // Store initial pending job in SQLite
     const stmt = db.prepare(`
-      INSERT INTO jobs (id, url, status, progress) 
-      VALUES (?, ?, ?, ?)
+      INSERT INTO jobs (id, session_id, url, status, progress) 
+      VALUES (?, ?, ?, ?, ?)
     `);
-    stmt.run(jobId, url, 'pending', 0);
+    stmt.run(jobId, sessionId, url, 'pending', 0);
     logger.info(`Job ${jobId} saved to database for URL: ${url}`);
     
     // Add to BullMQ
@@ -53,7 +55,7 @@ class QueueService {
     
     // Emit event
     if (io) {
-       io.emit('jobAdded', this.getJob(jobId));
+       io.to(sessionId).emit('jobAdded', this.getJob(jobId));
     }
     
     return jobId;
@@ -66,6 +68,7 @@ class QueueService {
     
     return {
       id: row.id,
+      sessionId: row.session_id,
       url: row.url,
       platform: row.platform,
       title: row.title,
@@ -79,11 +82,12 @@ class QueueService {
     };
   }
   
-  public getAllJobs(): any[] {
-    const stmt = db.prepare('SELECT * FROM jobs ORDER BY created_at DESC');
-    const rows = stmt.all() as any[];
+  public getJobsBySession(sessionId: string): any[] {
+    const stmt = db.prepare('SELECT * FROM jobs WHERE session_id = ? ORDER BY created_at DESC');
+    const rows = stmt.all(sessionId) as any[];
     return rows.map(row => ({
       id: row.id,
+      sessionId: row.session_id,
       url: row.url,
       platform: row.platform,
       title: row.title,
@@ -119,11 +123,10 @@ class QueueService {
     const stmt = db.prepare(`UPDATE jobs SET ${setClause.join(', ')} WHERE id = ?`);
     stmt.run(...values);
 
-    // If we are in the main Express process, emit local updates.
-    // If we are in the worker process, this io.emit does nothing useful,
-    // but the QueueEvents will catch the global events and emit them in the main process.
+    // Emit local updates to the specific session
     if (io) {
-       io.emit('jobUpdated', this.getJob(id));
+       const job = this.getJob(id);
+       if (job?.sessionId) io.to(job.sessionId).emit('jobUpdated', job);
     }
   }
 
@@ -149,7 +152,10 @@ logSubscriber.on('message', (channel, message) => {
   if (channel === 'worker_logs' && io) {
     try {
       const { jobId, log } = JSON.parse(message);
-      io.emit('jobLog', { jobId, log }); // Emitting globally for simplicity in the UI
+      const job = queueService.getJob(jobId);
+      if (job?.sessionId) {
+         io.to(job.sessionId).emit('jobLog', { jobId, log });
+      }
     } catch (e) {}
   }
 });

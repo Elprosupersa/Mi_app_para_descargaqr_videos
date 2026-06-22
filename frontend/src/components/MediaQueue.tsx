@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Loader2, Terminal, Download } from 'lucide-react';
 import clsx from 'clsx';
 import { io, Socket } from 'socket.io-client';
+import { getSessionId } from '../utils/session';
 
 interface Job {
   id: string;
@@ -29,7 +30,9 @@ export const MediaQueue: React.FC = () => {
       }
     });
 
-    const socket: Socket = io(apiUrl || '/');
+    const socket: Socket = io(apiUrl || '/', {
+      auth: { sessionId: getSessionId() }
+    });
 
     socket.on('jobAdded', (job: Job) => {
       setActiveJobs(prev => [job, ...prev]);

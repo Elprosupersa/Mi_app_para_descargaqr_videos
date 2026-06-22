@@ -24,6 +24,14 @@ export const io = new Server(httpServer, {
   }
 });
 
+io.on('connection', (socket) => {
+  const sessionId = socket.handshake.auth?.sessionId;
+  if (sessionId) {
+    socket.join(sessionId);
+    logger.info(`Socket joined session room: ${sessionId}`);
+  }
+});
+
 const PORT = process.env.PORT || 3000;
 
 // Initialize Database

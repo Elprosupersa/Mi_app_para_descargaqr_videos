@@ -17,6 +17,7 @@ export const initDb = () => {
     const initSql = `
       CREATE TABLE IF NOT EXISTS jobs (
         id TEXT PRIMARY KEY,
+        session_id TEXT,
         url TEXT NOT NULL,
         platform TEXT,
         title TEXT,
@@ -32,6 +33,14 @@ export const initDb = () => {
       );
     `;
     db.exec(initSql);
+    
+    // Migration for existing databases
+    try {
+      db.exec('ALTER TABLE jobs ADD COLUMN session_id TEXT;');
+    } catch (e) {
+      // Column probably already exists
+    }
+    
     logger.info('Database initialized successfully');
   } catch (err) {
     logger.error('Failed to initialize database', err);

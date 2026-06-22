@@ -62,7 +62,7 @@ const worker = new Worker('mediaQueue', async (job: Job) => {
   }
 }, { 
   connection: redisConnection as any,
-  concurrency: 3, // Process up to 3 downloads concurrently
+  concurrency: 10, // Increased concurrency to handle multiple users
   limiter: {
     max: 10,
     duration: 1000,

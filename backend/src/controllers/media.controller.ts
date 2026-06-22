@@ -41,8 +41,14 @@ export const processMedia = (req: Request, res: Response): void => {
       return;
     }
 
+    const sessionId = req.headers['x-session-id'] as string;
+    if (!sessionId) {
+      res.status(401).json({ success: false, message: 'Session ID is required.' });
+      return;
+    }
+
     const { url } = parseResult.data;
-    const jobId = queueService.enqueue(url);
+    const jobId = queueService.enqueue(url, sessionId);
 
     res.json({
       success: true,
@@ -77,7 +83,13 @@ export const getJobStatus = (req: Request, res: Response): void => {
 
 export const getHistory = (req: Request, res: Response): void => {
   try {
-    const jobs = queueService.getAllJobs();
+    const sessionId = req.headers['x-session-id'] as string;
+    if (!sessionId) {
+      res.status(401).json({ success: false, message: 'Session ID is required.' });
+      return;
+    }
+
+    const jobs = queueService.getJobsBySession(sessionId);
     res.json({ success: true, data: jobs });
   } catch (error: any) {
     logger.error('Error in getHistory:', error.message);
