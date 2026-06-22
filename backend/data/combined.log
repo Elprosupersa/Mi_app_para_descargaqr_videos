@@ -1,0 +1,208 @@
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 07:07:23"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 07:07:23"}
+{"level":"info","message":"Worker started and listening to mediaQueue","timestamp":"2026-06-22 07:07:23"}
+{"level":"info","message":"🚀 Server running on 0.0.0.0:3000","timestamp":"2026-06-22 07:07:23"}
+{"level":"info","message":"Connected to Redis successfully","timestamp":"2026-06-22 07:07:23"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 07:07:23"}
+{"level":"info","message":"🚀 Server running on 0.0.0.0:3000","timestamp":"2026-06-22 07:07:23"}
+{"level":"info","message":"Connected to Redis successfully","timestamp":"2026-06-22 07:07:23"}
+{"code":"ENOENT","errno":-2,"expose":false,"level":"error","message":"Unhandled server error ENOENT: no such file or directory, stat '/app/backend/dist/public/index.html'","path":"/app/backend/dist/public/index.html","stack":"Error: ENOENT: no such file or directory, stat '/app/backend/dist/public/index.html'","status":404,"statusCode":404,"syscall":"stat","timestamp":"2026-06-22 07:07:57"}
+{"code":"ENOENT","errno":-2,"expose":false,"level":"error","message":"Unhandled server error ENOENT: no such file or directory, stat '/app/backend/dist/public/index.html'","path":"/app/backend/dist/public/index.html","stack":"Error: ENOENT: no such file or directory, stat '/app/backend/dist/public/index.html'","status":404,"statusCode":404,"syscall":"stat","timestamp":"2026-06-22 07:07:57"}
+{"code":"ENOENT","errno":-2,"expose":false,"level":"error","message":"Unhandled server error ENOENT: no such file or directory, stat '/app/backend/dist/public/index.html'","path":"/app/backend/dist/public/index.html","stack":"Error: ENOENT: no such file or directory, stat '/app/backend/dist/public/index.html'","status":404,"statusCode":404,"syscall":"stat","timestamp":"2026-06-22 07:09:12"}
+{"code":"ENOENT","errno":-2,"expose":false,"level":"error","message":"Unhandled server error ENOENT: no such file or directory, stat '/app/backend/dist/public/index.html'","path":"/app/backend/dist/public/index.html","stack":"Error: ENOENT: no such file or directory, stat '/app/backend/dist/public/index.html'","status":404,"statusCode":404,"syscall":"stat","timestamp":"2026-06-22 07:09:12"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 07:16:38"}
+{"level":"info","message":"🚀 Server running on 0.0.0.0:3000","timestamp":"2026-06-22 07:16:38"}
+{"level":"info","message":"Connected to Redis successfully","timestamp":"2026-06-22 07:16:38"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 07:16:38"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 07:16:38"}
+{"level":"info","message":"Worker started and listening to mediaQueue","timestamp":"2026-06-22 07:16:38"}
+{"level":"info","message":"🚀 Server running on 0.0.0.0:3000","timestamp":"2026-06-22 07:16:38"}
+{"level":"info","message":"Connected to Redis successfully","timestamp":"2026-06-22 07:16:38"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 07:25:17"}
+{"level":"info","message":"🚀 Server running on 0.0.0.0:3000","timestamp":"2026-06-22 07:25:17"}
+{"level":"info","message":"Connected to Redis successfully","timestamp":"2026-06-22 07:25:17"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 07:36:53"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 07:36:53"}
+{"level":"info","message":"Worker started and listening to mediaQueue","timestamp":"2026-06-22 07:36:53"}
+{"level":"info","message":"🚀 Server running on 0.0.0.0:3000","timestamp":"2026-06-22 07:36:53"}
+{"level":"info","message":"Connected to Redis successfully","timestamp":"2026-06-22 07:36:53"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 07:36:53"}
+{"level":"info","message":"🚀 Server running on 0.0.0.0:3000","timestamp":"2026-06-22 07:36:53"}
+{"level":"info","message":"Connected to Redis successfully","timestamp":"2026-06-22 07:36:53"}
+{"level":"info","message":"Job 2aa7deb0-9e8a-43c9-b01d-fce4ffbccd75 saved to database for URL: https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 07:38:25"}
+{"level":"info","message":"Job 2aa7deb0-9e8a-43c9-b01d-fce4ffbccd75 added to BullMQ","timestamp":"2026-06-22 07:38:26"}
+{"level":"info","message":"Worker starting job 2aa7deb0-9e8a-43c9-b01d-fce4ffbccd75 for URL: https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 07:38:26"}
+{"level":"info","message":"Extracting metadata for https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 07:38:26"}
+{"level":"error","message":"yt-dlp metadata extraction failed with code 1: npm error code ENOVERSIONS\nnpm error No versions available for yt-dlp\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2026-06-22T07_38_26_058Z-debug-0.log\n","timestamp":"2026-06-22 07:38:26"}
+{"level":"error","message":"Job 2aa7deb0-9e8a-43c9-b01d-fce4ffbccd75 failed Failed to extract metadata: npm error code ENOVERSIONS\nnpm error No versions available for yt-dlp\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2026-06-22T07_38_26_058Z-debug-0.log\n","stack":"Error: Failed to extract metadata: npm error code ENOVERSIONS\nnpm error No versions available for yt-dlp\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2026-06-22T07_38_26_058Z-debug-0.log\n\n    at ChildProcess.<anonymous> (/app/backend/dist/services/media.service.js:40:31)\n    at ChildProcess.emit (node:events:524:28)\n    at maybeClose (node:internal/child_process:1104:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:304:5)","timestamp":"2026-06-22 07:38:26"}
+{"level":"error","message":"Job 2aa7deb0-9e8a-43c9-b01d-fce4ffbccd75 has failed with Failed to extract metadata: npm error code ENOVERSIONS\nnpm error No versions available for yt-dlp\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2026-06-22T07_38_26_058Z-debug-0.log\n","timestamp":"2026-06-22 07:38:26"}
+{"level":"info","message":"Job 87046326-b745-40d8-a11d-212c94d43570 saved to database for URL: https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 07:40:19"}
+{"level":"info","message":"Job 87046326-b745-40d8-a11d-212c94d43570 added to BullMQ","timestamp":"2026-06-22 07:40:19"}
+{"level":"info","message":"Worker starting job 87046326-b745-40d8-a11d-212c94d43570 for URL: https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 07:40:19"}
+{"level":"info","message":"Extracting metadata for https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 07:40:19"}
+{"level":"error","message":"yt-dlp metadata extraction failed with code 1: npm error code ENOVERSIONS\nnpm error No versions available for yt-dlp\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2026-06-22T07_40_19_458Z-debug-0.log\n","timestamp":"2026-06-22 07:40:19"}
+{"level":"error","message":"Job 87046326-b745-40d8-a11d-212c94d43570 failed Failed to extract metadata: npm error code ENOVERSIONS\nnpm error No versions available for yt-dlp\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2026-06-22T07_40_19_458Z-debug-0.log\n","stack":"Error: Failed to extract metadata: npm error code ENOVERSIONS\nnpm error No versions available for yt-dlp\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2026-06-22T07_40_19_458Z-debug-0.log\n\n    at ChildProcess.<anonymous> (/app/backend/dist/services/media.service.js:40:31)\n    at ChildProcess.emit (node:events:524:28)\n    at maybeClose (node:internal/child_process:1104:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:304:5)","timestamp":"2026-06-22 07:40:19"}
+{"level":"error","message":"Job 87046326-b745-40d8-a11d-212c94d43570 has failed with Failed to extract metadata: npm error code ENOVERSIONS\nnpm error No versions available for yt-dlp\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2026-06-22T07_40_19_458Z-debug-0.log\n","timestamp":"2026-06-22 07:40:19"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 07:42:12"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 07:42:12"}
+{"level":"info","message":"Worker started and listening to mediaQueue","timestamp":"2026-06-22 07:42:12"}
+{"level":"info","message":"🚀 Server running on 0.0.0.0:3000","timestamp":"2026-06-22 07:42:12"}
+{"level":"info","message":"Connected to Redis successfully","timestamp":"2026-06-22 07:42:12"}
+{"level":"info","message":"Job f9727423-6cb0-4c63-a6a6-6d7112a8858b saved to database for URL: https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 07:42:38"}
+{"level":"info","message":"Job f9727423-6cb0-4c63-a6a6-6d7112a8858b added to BullMQ","timestamp":"2026-06-22 07:42:38"}
+{"level":"info","message":"Worker starting job f9727423-6cb0-4c63-a6a6-6d7112a8858b for URL: https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 07:42:38"}
+{"level":"info","message":"Extracting metadata for https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 07:42:38"}
+{"level":"error","message":"yt-dlp metadata extraction failed with code 1: npm error code ENOVERSIONS\nnpm error No versions available for yt-dlp\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2026-06-22T07_42_38_796Z-debug-0.log\n","timestamp":"2026-06-22 07:42:39"}
+{"level":"error","message":"Job f9727423-6cb0-4c63-a6a6-6d7112a8858b failed Failed to extract metadata: npm error code ENOVERSIONS\nnpm error No versions available for yt-dlp\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2026-06-22T07_42_38_796Z-debug-0.log\n","stack":"Error: Failed to extract metadata: npm error code ENOVERSIONS\nnpm error No versions available for yt-dlp\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2026-06-22T07_42_38_796Z-debug-0.log\n\n    at ChildProcess.<anonymous> (/app/backend/dist/services/media.service.js:40:31)\n    at ChildProcess.emit (node:events:524:28)\n    at maybeClose (node:internal/child_process:1104:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:304:5)","timestamp":"2026-06-22 07:42:39"}
+{"level":"error","message":"Job f9727423-6cb0-4c63-a6a6-6d7112a8858b has failed with Failed to extract metadata: npm error code ENOVERSIONS\nnpm error No versions available for yt-dlp\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2026-06-22T07_42_38_796Z-debug-0.log\n","timestamp":"2026-06-22 07:42:39"}
+{"level":"info","message":"Job 6e8bd616-c479-4f0a-b8e5-9a9ee40e1300 saved to database for URL: https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 07:46:28"}
+{"level":"info","message":"Job 6e8bd616-c479-4f0a-b8e5-9a9ee40e1300 added to BullMQ","timestamp":"2026-06-22 07:46:28"}
+{"level":"info","message":"Worker starting job 6e8bd616-c479-4f0a-b8e5-9a9ee40e1300 for URL: https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 07:46:28"}
+{"level":"info","message":"Extracting metadata for https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 07:46:28"}
+{"level":"error","message":"yt-dlp metadata extraction failed with code 1: npm error code ENOVERSIONS\nnpm error No versions available for yt-dlp\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2026-06-22T07_46_28_305Z-debug-0.log\n","timestamp":"2026-06-22 07:46:28"}
+{"level":"error","message":"Job 6e8bd616-c479-4f0a-b8e5-9a9ee40e1300 failed Failed to extract metadata: npm error code ENOVERSIONS\nnpm error No versions available for yt-dlp\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2026-06-22T07_46_28_305Z-debug-0.log\n","stack":"Error: Failed to extract metadata: npm error code ENOVERSIONS\nnpm error No versions available for yt-dlp\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2026-06-22T07_46_28_305Z-debug-0.log\n\n    at ChildProcess.<anonymous> (/app/backend/dist/services/media.service.js:40:31)\n    at ChildProcess.emit (node:events:524:28)\n    at maybeClose (node:internal/child_process:1104:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:304:5)","timestamp":"2026-06-22 07:46:28"}
+{"level":"error","message":"Job 6e8bd616-c479-4f0a-b8e5-9a9ee40e1300 has failed with Failed to extract metadata: npm error code ENOVERSIONS\nnpm error No versions available for yt-dlp\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2026-06-22T07_46_28_305Z-debug-0.log\n","timestamp":"2026-06-22 07:46:28"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 07:51:14"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 07:51:14"}
+{"level":"info","message":"Worker started and listening to mediaQueue","timestamp":"2026-06-22 07:51:14"}
+{"level":"info","message":"🚀 Server running on 0.0.0.0:3000","timestamp":"2026-06-22 07:51:14"}
+{"level":"info","message":"Connected to Redis successfully","timestamp":"2026-06-22 07:51:14"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 07:51:14"}
+{"level":"info","message":"🚀 Server running on 0.0.0.0:3000","timestamp":"2026-06-22 07:51:14"}
+{"level":"info","message":"Connected to Redis successfully","timestamp":"2026-06-22 07:51:14"}
+{"level":"info","message":"Job b56efaea-2378-4c22-be97-750658986300 saved to database for URL: https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 07:52:15"}
+{"level":"info","message":"Job b56efaea-2378-4c22-be97-750658986300 added to BullMQ","timestamp":"2026-06-22 07:52:15"}
+{"level":"info","message":"Worker starting job b56efaea-2378-4c22-be97-750658986300 for URL: https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 07:52:15"}
+{"level":"info","message":"Extracting metadata for https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 07:52:15"}
+{"level":"error","message":"yt-dlp metadata extraction failed with code 1: npm error code ENOVERSIONS\nnpm error No versions available for yt-dlp\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2026-06-22T07_52_15_869Z-debug-0.log\n","timestamp":"2026-06-22 07:52:16"}
+{"level":"error","message":"Job b56efaea-2378-4c22-be97-750658986300 failed Failed to extract metadata: npm error code ENOVERSIONS\nnpm error No versions available for yt-dlp\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2026-06-22T07_52_15_869Z-debug-0.log\n","stack":"Error: Failed to extract metadata: npm error code ENOVERSIONS\nnpm error No versions available for yt-dlp\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2026-06-22T07_52_15_869Z-debug-0.log\n\n    at ChildProcess.<anonymous> (/app/backend/dist/services/media.service.js:40:31)\n    at ChildProcess.emit (node:events:524:28)\n    at maybeClose (node:internal/child_process:1104:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:304:5)","timestamp":"2026-06-22 07:52:16"}
+{"level":"error","message":"Job b56efaea-2378-4c22-be97-750658986300 has failed with Failed to extract metadata: npm error code ENOVERSIONS\nnpm error No versions available for yt-dlp\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2026-06-22T07_52_15_869Z-debug-0.log\n","timestamp":"2026-06-22 07:52:16"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 07:59:04"}
+{"level":"info","message":"🚀 Server running on 0.0.0.0:3000","timestamp":"2026-06-22 07:59:04"}
+{"level":"info","message":"Connected to Redis successfully","timestamp":"2026-06-22 07:59:04"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 07:59:04"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 07:59:04"}
+{"level":"info","message":"Worker started and listening to mediaQueue","timestamp":"2026-06-22 07:59:04"}
+{"level":"info","message":"🚀 Server running on 0.0.0.0:3000","timestamp":"2026-06-22 07:59:04"}
+{"level":"info","message":"Connected to Redis successfully","timestamp":"2026-06-22 07:59:04"}
+{"level":"info","message":"Job 214892be-5d01-45e6-b5bb-a28dfdcf6bce saved to database for URL: https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 08:00:17"}
+{"level":"info","message":"Job 214892be-5d01-45e6-b5bb-a28dfdcf6bce added to BullMQ","timestamp":"2026-06-22 08:00:17"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 08:08:27"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 08:08:27"}
+{"level":"info","message":"Worker started and listening to mediaQueue","timestamp":"2026-06-22 08:08:27"}
+{"level":"info","message":"🚀 Server running on 0.0.0.0:3000","timestamp":"2026-06-22 08:08:27"}
+{"level":"info","message":"Connected to Redis successfully","timestamp":"2026-06-22 08:08:27"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 08:08:27"}
+{"level":"info","message":"🚀 Server running on 0.0.0.0:3000","timestamp":"2026-06-22 08:08:27"}
+{"level":"info","message":"Connected to Redis successfully","timestamp":"2026-06-22 08:08:27"}
+{"level":"info","message":"Job 84ca2e6e-ad73-40c5-8f61-d1a629db7683 saved to database for URL: https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 08:08:54"}
+{"level":"info","message":"Job 84ca2e6e-ad73-40c5-8f61-d1a629db7683 added to BullMQ","timestamp":"2026-06-22 08:08:54"}
+{"level":"info","message":"Worker starting job 84ca2e6e-ad73-40c5-8f61-d1a629db7683 for URL: https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 08:08:54"}
+{"level":"info","message":"Extracting metadata for https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 08:08:54"}
+{"level":"info","message":"Starting download for https://www.youtube.com/watch?v=jqvq1cyhWRU -> 84ca2e6e-ad73-40c5-8f61-d1a629db7683","timestamp":"2026-06-22 08:08:56"}
+{"level":"info","message":"Worker starting job 214892be-5d01-45e6-b5bb-a28dfdcf6bce for URL: https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 08:08:57"}
+{"level":"info","message":"Extracting metadata for https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 08:08:57"}
+{"level":"info","message":"Starting download for https://www.youtube.com/watch?v=jqvq1cyhWRU -> 214892be-5d01-45e6-b5bb-a28dfdcf6bce","timestamp":"2026-06-22 08:08:59"}
+{"level":"info","message":"Download completed successfully: /app/backend/downloads/84ca2e6e-ad73-40c5-8f61-d1a629db7683.f251.webm","timestamp":"2026-06-22 08:09:01"}
+{"level":"info","message":"Job 84ca2e6e-ad73-40c5-8f61-d1a629db7683 completed successfully.","timestamp":"2026-06-22 08:09:01"}
+{"level":"info","message":"Download completed successfully: /app/backend/downloads/214892be-5d01-45e6-b5bb-a28dfdcf6bce.f251.webm","timestamp":"2026-06-22 08:09:04"}
+{"level":"info","message":"Job 214892be-5d01-45e6-b5bb-a28dfdcf6bce completed successfully.","timestamp":"2026-06-22 08:09:04"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 08:15:39"}
+{"level":"info","message":"🚀 Server running on 0.0.0.0:3000","timestamp":"2026-06-22 08:15:39"}
+{"level":"info","message":"Connected to Redis successfully","timestamp":"2026-06-22 08:15:39"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 08:15:39"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 08:15:39"}
+{"level":"info","message":"Worker started and listening to mediaQueue","timestamp":"2026-06-22 08:15:39"}
+{"level":"info","message":"🚀 Server running on 0.0.0.0:3000","timestamp":"2026-06-22 08:15:39"}
+{"level":"info","message":"Connected to Redis successfully","timestamp":"2026-06-22 08:15:39"}
+{"level":"info","message":"Job a4a6e891-907d-4a61-a6f6-1bdcc4028a3d saved to database for URL: https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 08:16:51"}
+{"level":"info","message":"Job a4a6e891-907d-4a61-a6f6-1bdcc4028a3d added to BullMQ","timestamp":"2026-06-22 08:16:51"}
+{"level":"info","message":"Worker starting job a4a6e891-907d-4a61-a6f6-1bdcc4028a3d for URL: https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 08:16:51"}
+{"level":"info","message":"Extracting metadata for https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 08:16:51"}
+{"level":"info","message":"Starting download for https://www.youtube.com/watch?v=jqvq1cyhWRU -> a4a6e891-907d-4a61-a6f6-1bdcc4028a3d","timestamp":"2026-06-22 08:16:52"}
+{"level":"info","message":"Download completed successfully: /app/backend/downloads/a4a6e891-907d-4a61-a6f6-1bdcc4028a3d.f251.webm","timestamp":"2026-06-22 08:16:57"}
+{"level":"info","message":"Job a4a6e891-907d-4a61-a6f6-1bdcc4028a3d completed successfully.","timestamp":"2026-06-22 08:16:57"}
+{"level":"info","message":"Global event: Job a4a6e891-907d-4a61-a6f6-1bdcc4028a3d completed","timestamp":"2026-06-22 08:16:57"}
+{"level":"info","message":"Global event: Job a4a6e891-907d-4a61-a6f6-1bdcc4028a3d completed","timestamp":"2026-06-22 08:16:57"}
+{"level":"info","message":"Job cd982c7e-1923-4dad-a42c-4cce81878fed saved to database for URL: https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 08:21:05"}
+{"level":"info","message":"Job cd982c7e-1923-4dad-a42c-4cce81878fed added to BullMQ","timestamp":"2026-06-22 08:21:05"}
+{"level":"info","message":"Worker starting job cd982c7e-1923-4dad-a42c-4cce81878fed for URL: https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 08:21:05"}
+{"level":"info","message":"Extracting metadata for https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 08:21:05"}
+{"level":"info","message":"Starting download for https://www.youtube.com/watch?v=jqvq1cyhWRU -> cd982c7e-1923-4dad-a42c-4cce81878fed","timestamp":"2026-06-22 08:21:06"}
+{"level":"info","message":"Download completed successfully: /app/backend/downloads/cd982c7e-1923-4dad-a42c-4cce81878fed.f251.webm","timestamp":"2026-06-22 08:21:11"}
+{"level":"info","message":"Job cd982c7e-1923-4dad-a42c-4cce81878fed completed successfully.","timestamp":"2026-06-22 08:21:11"}
+{"level":"info","message":"Global event: Job cd982c7e-1923-4dad-a42c-4cce81878fed completed","timestamp":"2026-06-22 08:21:11"}
+{"level":"info","message":"Global event: Job cd982c7e-1923-4dad-a42c-4cce81878fed completed","timestamp":"2026-06-22 08:21:11"}
+{"level":"info","message":"Job f9d5cf86-20f5-4577-a2e9-c94140b2e84b saved to database for URL: https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 08:21:27"}
+{"level":"info","message":"Job f9d5cf86-20f5-4577-a2e9-c94140b2e84b added to BullMQ","timestamp":"2026-06-22 08:21:27"}
+{"level":"info","message":"Worker starting job f9d5cf86-20f5-4577-a2e9-c94140b2e84b for URL: https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 08:21:27"}
+{"level":"info","message":"Extracting metadata for https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 08:21:27"}
+{"level":"info","message":"Starting download for https://www.youtube.com/watch?v=jqvq1cyhWRU -> f9d5cf86-20f5-4577-a2e9-c94140b2e84b","timestamp":"2026-06-22 08:21:29"}
+{"level":"info","message":"Download completed successfully: /app/backend/downloads/f9d5cf86-20f5-4577-a2e9-c94140b2e84b.f251.webm","timestamp":"2026-06-22 08:21:33"}
+{"level":"info","message":"Job f9d5cf86-20f5-4577-a2e9-c94140b2e84b completed successfully.","timestamp":"2026-06-22 08:21:33"}
+{"level":"info","message":"Global event: Job f9d5cf86-20f5-4577-a2e9-c94140b2e84b completed","timestamp":"2026-06-22 08:21:33"}
+{"level":"info","message":"Global event: Job f9d5cf86-20f5-4577-a2e9-c94140b2e84b completed","timestamp":"2026-06-22 08:21:33"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 08:31:10"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 08:31:10"}
+{"level":"info","message":"Worker started and listening to mediaQueue","timestamp":"2026-06-22 08:31:10"}
+{"level":"info","message":"🚀 Server running on 0.0.0.0:3000","timestamp":"2026-06-22 08:31:10"}
+{"level":"info","message":"Connected to Redis successfully","timestamp":"2026-06-22 08:31:10"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 08:31:10"}
+{"level":"info","message":"🚀 Server running on 0.0.0.0:3000","timestamp":"2026-06-22 08:31:10"}
+{"level":"info","message":"Connected to Redis successfully","timestamp":"2026-06-22 08:31:10"}
+{"level":"info","message":"Job 51fc0fbe-221b-4162-af89-f7c084539b55 saved to database for URL: https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 08:31:25"}
+{"level":"info","message":"Job 51fc0fbe-221b-4162-af89-f7c084539b55 added to BullMQ","timestamp":"2026-06-22 08:31:25"}
+{"level":"info","message":"Worker starting job 51fc0fbe-221b-4162-af89-f7c084539b55 for URL: https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 08:31:25"}
+{"level":"info","message":"Extracting metadata for https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 08:31:25"}
+{"level":"info","message":"Starting download for https://www.youtube.com/watch?v=jqvq1cyhWRU -> 51fc0fbe-221b-4162-af89-f7c084539b55","timestamp":"2026-06-22 08:31:27"}
+{"level":"info","message":"Download completed successfully: /app/backend/downloads/51fc0fbe-221b-4162-af89-f7c084539b55.f251.webm","timestamp":"2026-06-22 08:31:32"}
+{"level":"info","message":"Job 51fc0fbe-221b-4162-af89-f7c084539b55 completed successfully.","timestamp":"2026-06-22 08:31:32"}
+{"level":"info","message":"Global event: Job 51fc0fbe-221b-4162-af89-f7c084539b55 completed","timestamp":"2026-06-22 08:31:32"}
+{"level":"info","message":"Global event: Job 51fc0fbe-221b-4162-af89-f7c084539b55 completed","timestamp":"2026-06-22 08:31:32"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 08:40:17"}
+{"level":"info","message":"🚀 Server running on 0.0.0.0:3000","timestamp":"2026-06-22 08:40:17"}
+{"level":"info","message":"Connected to Redis successfully","timestamp":"2026-06-22 08:40:17"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 08:40:17"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 08:40:17"}
+{"level":"info","message":"Worker started and listening to mediaQueue","timestamp":"2026-06-22 08:40:17"}
+{"level":"info","message":"🚀 Server running on 0.0.0.0:3000","timestamp":"2026-06-22 08:40:17"}
+{"level":"info","message":"Connected to Redis successfully","timestamp":"2026-06-22 08:40:17"}
+{"level":"info","message":"Job d85e84f5-ec2a-4c9c-8016-0579eedb7ecd saved to database for URL: https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 08:40:28"}
+{"level":"info","message":"Job d85e84f5-ec2a-4c9c-8016-0579eedb7ecd added to BullMQ","timestamp":"2026-06-22 08:40:28"}
+{"level":"info","message":"Worker starting job d85e84f5-ec2a-4c9c-8016-0579eedb7ecd for URL: https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 08:40:28"}
+{"level":"info","message":"Extracting metadata for https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 08:40:28"}
+{"level":"info","message":"Starting download for https://www.youtube.com/watch?v=jqvq1cyhWRU -> d85e84f5-ec2a-4c9c-8016-0579eedb7ecd","timestamp":"2026-06-22 08:40:29"}
+{"level":"info","message":"Download completed successfully: /app/backend/downloads/d85e84f5-ec2a-4c9c-8016-0579eedb7ecd.f251.webm","timestamp":"2026-06-22 08:40:34"}
+{"level":"info","message":"Job d85e84f5-ec2a-4c9c-8016-0579eedb7ecd completed successfully.","timestamp":"2026-06-22 08:40:34"}
+{"level":"info","message":"Global event: Job d85e84f5-ec2a-4c9c-8016-0579eedb7ecd completed","timestamp":"2026-06-22 08:40:34"}
+{"level":"info","message":"Global event: Job d85e84f5-ec2a-4c9c-8016-0579eedb7ecd completed","timestamp":"2026-06-22 08:40:34"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 08:45:02"}
+{"level":"info","message":"🚀 Server running on 0.0.0.0:3000","timestamp":"2026-06-22 08:45:02"}
+{"level":"info","message":"Connected to Redis successfully","timestamp":"2026-06-22 08:45:02"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 08:45:02"}
+{"level":"info","message":"Database initialized successfully","timestamp":"2026-06-22 08:45:02"}
+{"level":"info","message":"Worker started and listening to mediaQueue","timestamp":"2026-06-22 08:45:02"}
+{"level":"info","message":"🚀 Server running on 0.0.0.0:3000","timestamp":"2026-06-22 08:45:02"}
+{"level":"info","message":"Connected to Redis successfully","timestamp":"2026-06-22 08:45:02"}
+{"level":"info","message":"Job 218f2644-c035-4181-9b67-99c757f0cd77 saved to database for URL: https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 08:45:25"}
+{"level":"info","message":"Job 218f2644-c035-4181-9b67-99c757f0cd77 added to BullMQ","timestamp":"2026-06-22 08:45:25"}
+{"level":"info","message":"Worker starting job 218f2644-c035-4181-9b67-99c757f0cd77 for URL: https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 08:45:25"}
+{"level":"info","message":"Extracting metadata for https://www.youtube.com/watch?v=jqvq1cyhWRU","timestamp":"2026-06-22 08:45:25"}
+{"level":"info","message":"Starting download for https://www.youtube.com/watch?v=jqvq1cyhWRU -> 218f2644-c035-4181-9b67-99c757f0cd77","timestamp":"2026-06-22 08:45:27"}
+{"level":"info","message":"Download completed successfully: /app/backend/downloads/218f2644-c035-4181-9b67-99c757f0cd77.mp4","timestamp":"2026-06-22 08:45:31"}
+{"level":"info","message":"Job 218f2644-c035-4181-9b67-99c757f0cd77 completed successfully.","timestamp":"2026-06-22 08:45:31"}
+{"level":"info","message":"Global event: Job 218f2644-c035-4181-9b67-99c757f0cd77 completed","timestamp":"2026-06-22 08:45:31"}
+{"level":"info","message":"Global event: Job 218f2644-c035-4181-9b67-99c757f0cd77 completed","timestamp":"2026-06-22 08:45:31"}
+{"level":"info","message":"Job c061bc7b-2f24-4e98-9dcf-3d18caafd4a8 saved to database for URL: https://www.tiktok.com/@kodense/video/7644649225506147591?is_from_webapp=1&sender_device=pc&web_id=7651422613419476488","timestamp":"2026-06-22 08:46:53"}
+{"level":"info","message":"Job c061bc7b-2f24-4e98-9dcf-3d18caafd4a8 added to BullMQ","timestamp":"2026-06-22 08:46:53"}
+{"level":"info","message":"Worker starting job c061bc7b-2f24-4e98-9dcf-3d18caafd4a8 for URL: https://www.tiktok.com/@kodense/video/7644649225506147591?is_from_webapp=1&sender_device=pc&web_id=7651422613419476488","timestamp":"2026-06-22 08:46:53"}
+{"level":"info","message":"Extracting metadata for https://www.tiktok.com/@kodense/video/7644649225506147591?is_from_webapp=1&sender_device=pc&web_id=7651422613419476488","timestamp":"2026-06-22 08:46:53"}
+{"level":"info","message":"Starting download for https://www.tiktok.com/@kodense/video/7644649225506147591?is_from_webapp=1&sender_device=pc&web_id=7651422613419476488 -> c061bc7b-2f24-4e98-9dcf-3d18caafd4a8","timestamp":"2026-06-22 08:46:54"}
+{"level":"info","message":"Download completed successfully: /app/backend/downloads/c061bc7b-2f24-4e98-9dcf-3d18caafd4a8.mp4","timestamp":"2026-06-22 08:46:58"}
+{"level":"info","message":"Job c061bc7b-2f24-4e98-9dcf-3d18caafd4a8 completed successfully.","timestamp":"2026-06-22 08:46:58"}
+{"level":"info","message":"Global event: Job c061bc7b-2f24-4e98-9dcf-3d18caafd4a8 completed","timestamp":"2026-06-22 08:46:58"}
+{"level":"info","message":"Global event: Job c061bc7b-2f24-4e98-9dcf-3d18caafd4a8 completed","timestamp":"2026-06-22 08:46:58"}
+{"address":"172.18.0.2","code":"ECONNREFUSED","errno":-111,"level":"error","message":"Redis connection error: connect ECONNREFUSED 172.18.0.2:6379","port":6379,"stack":"Error: connect ECONNREFUSED 172.18.0.2:6379\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)","syscall":"connect","timestamp":"2026-06-22 08:56:28"}
+{"address":"172.18.0.2","code":"ECONNREFUSED","errno":-111,"level":"error","message":"Redis connection error: connect ECONNREFUSED 172.18.0.2:6379","port":6379,"stack":"Error: connect ECONNREFUSED 172.18.0.2:6379\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)","syscall":"connect","timestamp":"2026-06-22 08:56:28"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"redis","level":"error","message":"Redis connection error: getaddrinfo ENOTFOUND redis","stack":"Error: getaddrinfo ENOTFOUND redis\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)","syscall":"getaddrinfo","timestamp":"2026-06-22 08:56:32"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"redis","level":"error","message":"Redis connection error: getaddrinfo ENOTFOUND redis","stack":"Error: getaddrinfo ENOTFOUND redis\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)","syscall":"getaddrinfo","timestamp":"2026-06-22 08:56:35"}

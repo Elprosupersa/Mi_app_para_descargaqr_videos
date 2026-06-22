@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const media_controller_1 = require("../controllers/media.controller");
+const router = (0, express_1.Router)();
+router.post('/process', media_controller_1.processMedia);
+router.get('/status/:id', media_controller_1.getJobStatus);
+router.get('/history', media_controller_1.getHistory);
+router.get('/download/:id', media_controller_1.downloadFile);
+exports.default = router;

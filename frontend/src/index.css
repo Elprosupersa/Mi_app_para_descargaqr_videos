@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-tiktok-cyan: #25F4EE;
+  --color-tiktok-magenta: #FE2C55;
+  --color-tiktok-black: #010101;
+  --color-background: #0f1115;
+  --color-surface: #1a1d24;
+}
+
+body {
+  background-color: var(--color-background);
+  color: white;
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Base styles for dark mode input autofill */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px var(--color-surface) inset !important;
+    -webkit-text-fill-color: white !important;
+}
