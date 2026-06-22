@@ -77,56 +77,68 @@ export const HistoryPage: React.FC = () => {
         </div>
       </div>
 
-      <div className="bg-surface border border-white/10 rounded-2xl overflow-hidden">
+      <div className="bg-surface/40 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
         {filteredJobs.length === 0 ? (
-          <div className="p-12 text-center text-white/50">
+          <div className="p-12 text-center text-white/50 animate-in fade-in">
             <FileVideo className="w-12 h-12 mx-auto mb-4 opacity-50" />
             <p className="text-lg">No media found.</p>
           </div>
         ) : (
-          <table className="w-full text-left border-collapse">
-            <thead>
-              <tr className="border-b border-white/10 text-sm text-white/50 uppercase tracking-wider bg-black/20">
-                <th className="p-4 font-medium">Media</th>
-                <th className="p-4 font-medium">Platform</th>
-                <th className="p-4 font-medium">Status</th>
-                <th className="p-4 font-medium text-right">Actions</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-white/10">
+          <div className="w-full">
+            {/* Desktop Header */}
+            <div className="hidden md:grid grid-cols-12 gap-4 p-4 text-xs font-semibold text-white/40 uppercase tracking-wider bg-black/40 border-b border-white/10">
+              <div className="col-span-6">Media</div>
+              <div className="col-span-2">Platform</div>
+              <div className="col-span-2">Status</div>
+              <div className="col-span-2 text-right">Actions</div>
+            </div>
+            
+            {/* Unified Rows/Cards List */}
+            <div className="divide-y divide-white/10">
               {filteredJobs.map((job) => (
-                <tr key={job.id} className="hover:bg-white/5 transition-colors group">
-                  <td className="p-4">
-                    <div className="flex items-center gap-4">
-                      {job.thumbnail ? (
-                        <img src={job.thumbnail} alt="Thumbnail" className="w-16 h-16 object-cover rounded-lg bg-black/50" />
-                      ) : (
-                        <div className="w-16 h-16 rounded-lg bg-white/5 flex items-center justify-center">
-                          <FileVideo className="w-6 h-6 text-white/30" />
-                        </div>
-                      )}
-                      <div>
-                        <p className="font-semibold text-white line-clamp-1 max-w-sm" title={job.title || job.url}>
-                          {job.title || job.url}
-                        </p>
+                <div key={job.id} className="flex flex-col md:grid md:grid-cols-12 gap-4 p-4 md:items-center hover:bg-white/5 transition-all duration-300 group">
+                  
+                  {/* Media Info (Thumbnail + Title) */}
+                  <div className="col-span-6 flex items-start md:items-center gap-4">
+                    {job.thumbnail ? (
+                      <img src={job.thumbnail} alt="Thumbnail" className="w-24 h-24 md:w-16 md:h-16 object-cover rounded-xl shadow-lg border border-white/5" />
+                    ) : (
+                      <div className="w-24 h-24 md:w-16 md:h-16 rounded-xl bg-white/5 flex items-center justify-center border border-white/5">
+                        <FileVideo className="w-6 h-6 md:w-5 md:h-5 text-white/30" />
                       </div>
+                    )}
+                    <div className="flex-1 min-w-0">
+                      <p className="font-semibold text-white text-base md:text-sm line-clamp-2 md:line-clamp-1 break-words" title={job.title || job.url}>
+                        {job.title || job.url}
+                      </p>
+                      {/* Show Platform inline on mobile */}
+                      <p className="md:hidden text-xs text-white/50 mt-1 capitalize flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-tiktok-cyan inline-block"></span>
+                        {job.platform || 'Unknown'}
+                      </p>
                     </div>
-                  </td>
-                  <td className="p-4 capitalize text-white/80">{job.platform || 'Unknown'}</td>
-                  <td className="p-4">
-                    <div className="flex items-center gap-2">
-                      {job.status === 'completed' && <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded-full">Completed</span>}
-                      {job.status === 'error' && <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded-full" title={job.errorMessage}>Error</span>}
-                      {job.status === 'downloading' && <span className="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded-full">Downloading {job.progress}%</span>}
-                      {job.status === 'pending' && <span className="px-2 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded-full">Pending</span>}
-                    </div>
-                  </td>
-                  <td className="p-4 text-right">
+                  </div>
+
+                  {/* Platform (Desktop only) */}
+                  <div className="hidden md:block col-span-2 capitalize text-white/80 text-sm">
+                    {job.platform || 'Unknown'}
+                  </div>
+
+                  {/* Status */}
+                  <div className="col-span-2 flex items-center">
+                    {job.status === 'completed' && <span className="px-3 py-1 bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-medium rounded-full">Completed</span>}
+                    {job.status === 'error' && <span className="px-3 py-1 bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-medium rounded-full" title={job.errorMessage}>Error</span>}
+                    {job.status === 'downloading' && <span className="px-3 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-medium rounded-full">Downloading {job.progress}%</span>}
+                    {job.status === 'pending' && <span className="px-3 py-1 bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-xs font-medium rounded-full">Pending</span>}
+                  </div>
+
+                  {/* Actions */}
+                  <div className="col-span-2 md:text-right mt-2 md:mt-0 w-full md:w-auto">
                     {job.status === 'completed' && job.filePath && (
                       <a
                         href={job.filePath}
                         download={job.filePath.split('/').pop() || 'video.mp4'}
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-tiktok-cyan/10 hover:bg-tiktok-cyan/20 text-tiktok-cyan rounded-lg transition-colors"
+                        className="w-full md:w-auto inline-flex justify-center items-center gap-2 px-4 py-2.5 bg-white/5 hover:bg-tiktok-cyan/20 border border-white/5 hover:border-tiktok-cyan/30 text-white hover:text-tiktok-cyan rounded-xl transition-all duration-200 text-sm font-medium active:scale-95"
                       >
                         <Download className="w-4 h-4" /> Download
                       </a>
@@ -134,16 +146,17 @@ export const HistoryPage: React.FC = () => {
                     {job.status === 'error' && (
                        <button
                          onClick={() => handleRetry(job.url)}
-                         className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 text-white rounded-lg transition-colors opacity-0 group-hover:opacity-100"
+                         className="w-full md:w-auto inline-flex justify-center items-center gap-2 px-4 py-2.5 bg-white/5 hover:bg-white/10 text-white rounded-xl transition-all duration-200 md:opacity-0 md:group-hover:opacity-100 text-sm font-medium active:scale-95"
                        >
                          <RefreshCw className="w-4 h-4" /> Retry
                        </button>
                     )}
-                  </td>
-                </tr>
+                  </div>
+
+                </div>
               ))}
-            </tbody>
-          </table>
+            </div>
+          </div>
         )}
       </div>
     </div>

@@ -68,8 +68,8 @@ export const MediaQueue: React.FC = () => {
 
   if (activeJobs.length === 0) {
     return (
-      <div className="p-8 text-center bg-surface border border-white/10 rounded-2xl">
-        <p className="text-white/50">Your queue is empty. Paste a link to start downloading.</p>
+      <div className="p-8 text-center bg-surface/40 backdrop-blur-md border border-white/10 rounded-2xl flex flex-col items-center justify-center min-h-[160px] animate-in fade-in">
+        <p className="text-white/50 text-sm md:text-base">Your queue is empty. Paste a link to start downloading.</p>
       </div>
     );
   }
@@ -77,59 +77,65 @@ export const MediaQueue: React.FC = () => {
   return (
     <div className="space-y-4">
       {activeJobs.map((job) => (
-        <div key={job.id} className="p-4 bg-surface border border-white/10 rounded-2xl flex flex-col gap-4 transition-all hover:bg-white/5">
-          <div className="flex flex-col md:flex-row gap-4 items-center w-full">
+        <div key={job.id} className="p-4 md:p-5 bg-surface/60 backdrop-blur-xl border border-white/10 rounded-2xl flex flex-col gap-4 transition-all duration-300 hover:bg-white/10 hover:border-white/20 hover:scale-[1.01] shadow-lg">
+          <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center w-full">
             {job.thumbnail ? (
-               <img src={job.thumbnail} alt="thumbnail" className="w-16 h-16 object-cover rounded-md shadow-lg" />
+               <img src={job.thumbnail} alt="thumbnail" className="w-full sm:w-20 h-32 sm:h-20 object-cover rounded-xl shadow-lg border border-white/5" />
             ) : (
-               <div className="w-16 h-16 rounded-md bg-white/5 flex items-center justify-center">
-                 <Loader2 className="w-5 h-5 animate-spin text-white/30" />
+               <div className="w-full sm:w-20 h-32 sm:h-20 rounded-xl bg-white/5 flex items-center justify-center border border-white/5">
+                 <Loader2 className="w-6 h-6 animate-spin text-white/30" />
                </div>
             )}
             
-            <div className="flex-1 w-full flex flex-col justify-center">
-               <div className="flex justify-between items-start mb-2">
-                  <div>
-                    <h3 className="font-bold text-white line-clamp-1 text-lg" title={job.title || job.url}>
-                      {job.title || 'Processing...'}
+            <div className="flex-1 w-full flex flex-col justify-center min-w-0">
+               <div className="flex justify-between items-start mb-3 sm:mb-2 gap-4">
+                  <div className="min-w-0">
+                    <h3 className="font-bold text-white truncate text-base md:text-lg" title={job.title || job.url}>
+                      {job.title || 'Fetching metadata...'}
                     </h3>
-                    <p className="text-sm text-white/50">{job.url}</p>
+                    <p className="text-xs md:text-sm text-white/50 truncate">{job.url}</p>
                   </div>
                   <button 
                     onClick={() => setShowLogsFor(showLogsFor === job.id ? null : job.id)}
-                    className="p-2 bg-white/5 hover:bg-white/10 rounded-lg text-white/60 hover:text-white transition-colors"
+                    className="flex-shrink-0 p-2 bg-white/5 hover:bg-white/10 rounded-xl text-white/60 hover:text-white transition-colors active:scale-95"
                     title="Toggle Logs"
                   >
-                    <Terminal className="w-4 h-4" />
+                    <Terminal className="w-4 h-4 md:w-5 md:h-5" />
                   </button>
                </div>
                
                {/* Progress Bar or Download Button */}
-               <div className="flex items-center gap-3">
+               <div className="flex flex-wrap items-center gap-3">
                  {job.status === 'completed' && job.filePath ? (
                     <a
                       href={job.filePath}
                       download={job.filePath.split('/').pop() || 'video.mp4'}
-                      className="ml-auto inline-flex items-center gap-2 px-4 py-2 bg-tiktok-cyan/10 hover:bg-tiktok-cyan/20 text-tiktok-cyan rounded-lg transition-colors text-sm"
+                      className="w-full sm:w-auto mt-2 sm:mt-0 sm:ml-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-tiktok-cyan/10 hover:bg-tiktok-cyan/20 text-tiktok-cyan font-medium rounded-xl transition-colors text-sm"
                     >
-                      <Download className="w-4 h-4" /> Download
+                      <Download className="w-4 h-4" /> Download File
                     </a>
                  ) : (
-                   <>
-                     <span className="text-xs text-white/50 w-8 text-right">{job.progress}%</span>
-                     <div className="relative flex-1 h-1.5 bg-white/10 rounded-full overflow-hidden group">
+                   <div className="w-full flex items-center gap-3">
+                     <div className="flex items-center gap-2 w-24">
+                        {job.status === 'error' && <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>}
+                        {job.status === 'downloading' && <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>}
+                        {job.status === 'pending' && <span className="w-2 h-2 rounded-full bg-yellow-500"></span>}
+                        <span className="text-xs font-semibold uppercase text-white/70 tracking-wider">
+                           {job.status}
+                        </span>
+                     </div>
+                     
+                     <div className="relative flex-1 h-2 bg-black/40 rounded-full overflow-hidden group">
                         <div 
                           className={clsx(
                             "absolute top-0 left-0 h-full rounded-full transition-all duration-300",
-                            job.status === 'error' ? "bg-red-500" : "bg-white group-hover:bg-tiktok-cyan"
+                            job.status === 'error' ? "bg-red-500" : "bg-gradient-to-r from-tiktok-cyan to-tiktok-magenta"
                           )}
                           style={{ width: `${Math.max(job.progress, 1)}%` }}
                         />
                      </div>
-                     <span className="text-xs font-medium uppercase w-20 text-white/50">
-                        {job.status}
-                     </span>
-                   </>
+                     <span className="text-xs text-white/50 w-10 text-right font-mono">{job.progress}%</span>
+                   </div>
                  )}
                </div>
             </div>
@@ -137,11 +143,13 @@ export const MediaQueue: React.FC = () => {
           
           {/* Live Logs Terminal */}
           {showLogsFor === job.id && (
-            <div className="w-full bg-black/50 border border-white/5 rounded-xl p-4 font-mono text-xs text-white/70 overflow-hidden h-32 flex flex-col justify-end">
+            <div className="w-full bg-black/80 backdrop-blur-md border border-white/10 rounded-xl p-4 font-mono text-xs text-tiktok-cyan/80 overflow-hidden h-40 flex flex-col justify-end shadow-inner animate-in slide-in-from-top-2">
               {logs[job.id] ? logs[job.id].map((log, i) => (
-                <div key={i} className="truncate">{log}</div>
+                <div key={i} className="truncate hover:text-white transition-colors">{log}</div>
               )) : (
-                <div className="text-white/30 italic">Waiting for logs...</div>
+                <div className="text-white/30 italic flex items-center gap-2">
+                  <Loader2 className="w-3 h-3 animate-spin" /> Waiting for logs...
+                </div>
               )}
             </div>
           )}
